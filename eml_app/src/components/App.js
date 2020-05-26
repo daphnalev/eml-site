@@ -14,21 +14,16 @@ class App extends Component {
     this.fileUploaded = this.fileUploaded.bind(this)
   }
 
-  componentDidMount() {
-    
-  }
-
-  fileUploaded(){
+  fileUploaded(file) {
     console.log("file uploaded");
-    this.setState({file:true});
+    this.setState({ file: true });
   }
 
   render() {
     return (
       <div>
-        <p>got here?</p>
-        <UploadFile fileUploaded={this.fileUploaded}/>
-        {this.state.file ? <FileConfiguration/> : null}
+        <UploadFile fileUploaded={this.fileUploaded} />
+        {this.state.file ? <FileConfiguration /> : null}
       </div>
     );
   }
