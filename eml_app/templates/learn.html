@@ -1,0 +1,442 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>EML - Easy Machine Learning</title>
+    <!-- Website Icon  -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="{% url 'index' %}">
+            <img src="{% static 'images/logo_a.svg' %}" alt="alternative">
+        </a>
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">EML</a> -->
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'index' %}">HOME <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'index' %}">OUR SOLUTION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'index' %}">PREVIEW</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'index' %}">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'learn' %}"
+                        style="border-style: solid; border-color: DeepSkyBlue; color: DeepSkyBlue; padding: 0px 5px;">Trial</a>
+                </li>
+            </ul>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Lets Get Started </h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    <!-- Body -->
+    <div class="ex-basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="text-container">
+                        <p>We want your EML experience to be perfect for your needs.
+                            Answer a few questions to help us know your data better. </p>
+                    </div> <!-- end of text-container -->
+
+                    <div id="1" class="text-container">
+                        <h3>1. Upload Data</h3>
+                        <p> Please choose your file containing the data, we work best with .csv and .excel. </p>
+
+                        <div class="form-container">
+                            <form>
+                                <div class="form-group">
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </form>
+                            <div class="col-md-6">
+                                <button class="btn-outline-reg" onclick="stage1()">NEXT</button>
+                            </div>
+                        </div>
+                    </div> <!-- end of text-container -->
+
+                    <div id="2" class="text-container" hidden>
+                        <h3>2. What is the item you wish to learn?</h3>
+                        <p> Mark the column that is the result of your past research.
+                            The results we’ present to you will reflect the influence of the rest of the items on the
+                            one you chose. </p>
+
+                        <div class="form-container">
+                            <div class="form-group">
+                                <table>
+                                    <tr>
+                                        <th>Column Name</th>
+                                        <th>Id</th>
+                                        <th>SepalLengthCm</th>
+                                        <th>SepalWidthCm</th>
+                                        <th>PetalLengthCm</th>
+                                        <th>PetalWidthCm</th>
+                                        <th>Species</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Column Example</td>
+                                        <td>1</td>
+                                        <td>5.1</td>
+                                        <td>3.5</td>
+                                        <td>1.4</td>
+                                        <td>0.2</td>
+                                        <td>Iris-setosa</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn-outline-reg" onclick="stage2()">NEXT</button>
+                            </div>
+                        </div>
+
+                    </div> <!-- end of text-container -->
+
+                    <div id="3" class="text-container" hidden>
+                        <h3>3. Do you have any critical features?</h3>
+                        <p>Please choose the features that are most important in your research.
+                            Some of the preprocessing we do in the background may result in deletion of columns. If
+                            there are any columns that cannot be removed doing the process, mark them, and we will make
+                            sure they will be included.
+                        </p>
+
+                        <div class="col-md-6">
+                            <div class="form-container">
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <th>Column Name</th>
+                                            <th>Id</th>
+                                            <th>SepalLengthCm</th>
+                                            <th>SepalWidthCm</th>
+                                            <th>PetalLengthCm</th>
+                                            <th>PetalWidthCm</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Column Example</td>
+                                            <td>1</td>
+                                            <td>5.1</td>
+                                            <td>3.5</td>
+                                            <td>1.4</td>
+                                            <td>0.2</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <button class="btn-outline-reg" onclick="stage3()">NEXT</button>
+                            </div>
+                        </div>
+                    </div> <!-- end of text-container -->
+
+                    <div id="4" class="text-container" hidden>
+                        <h3>4. What do you wish to do with missing information?</h3>
+                        <p>Does your data contain missing information? If Yes please fill the table below, if No press
+                            next
+
+                        </p>
+
+                        <form id="contactForm" data-toggle="validator" data-focus="false">
+                            <div class="form-container">
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <th>Column Name</th>
+                                            <th>Id</th>
+                                            <th>SepalLengthCm</th>
+                                            <th>SepalWidthCm</th>
+                                            <th>PetalLengthCm</th>
+                                            <th>PetalWidthCm</th>
+                                            <th>Species</th>
+                                        </tr>
+                                        <tr>
+                                            <td>How do you mark it? <br /> <small>Nan, --, 0, Blank etc.</small>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control-input">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>What do you want to do with missing data?</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <select class="form-control-select">
+                                                        <option class="select-option"> Ignore row/col with missing
+                                                            information</option>
+                                                        <option class="select-option">Treat it as an average
+                                                        </option>
+                                                        <option class="select-option">Treat it as an median</option>
+                                                    </select>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="full-button">LEARN</a>
+                                </div>
+                            </div>
+                    </div> <!-- end of text-container -->
+
+                </div> <!-- end of col-->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-2 -->
+    <!-- end of Body -->
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Learning</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4>About EML</h4>
+                        <p>We're passionate about creating the best mobile apps for personal development</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Important Links</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Our business partners <a class="turquoise"
+                                        href="#your-link">startupguide.com</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Read our <a class="turquoise" href="terms-conditions.html">Terms
+                                        & Conditions</a>, <a class="turquoise" href="privacy-policy.html">Privacy
+                                        Policy</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Social Media</h4>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-google-plus-g fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © EML</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+
+</body>
+{% load static %}
+
+<!-- Scripts -->
+<script src="{% static 'js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="{% static 'js/popper.min.js' %}"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="{% static 'js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+<script src="{% static 'js/jquery.magnific-popup.js' %}"></script> <!-- Magnific Popup for lightboxes -->
+<script src="{% static 'js/morphext.min.js' %}"></script> <!-- Morphtext rotating text in the header -->
+<script src="{% static 'js/validator.min.js' %}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="{% static 'js/scripts.js' %}"></script> <!-- Custom scripts -->
+<script src="{% static 'js/learnScripts.js' %}"></script> <!-- Python scripts -->
+
+<script src="{% static 'main.js' %}"></script>
+
+</html>
