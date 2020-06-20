@@ -11,6 +11,22 @@ function stage3() {
 }
 
 function stage4() {
-    document.getElementById("5").hidden = false;
+
+    document.getElementById("learn").hidden = false;
 }
+
+function result() {
+
+    document.getElementById("re").hidden = false;
+}
+
+/**
+$.ajax({
+    type: "POST",
+    url: ..\logic\parser.py",
+    data: { param: file}
+}).done(function( o ) {
+    // use the firs rows
+});
+*/
 

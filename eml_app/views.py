@@ -6,4 +6,7 @@ def index(request):
 
 
 def learn(request):
+    if request.method == "POST":
+        cvs_file = request.FILES["fileToUpload"]
+        print(cvs_file.name)
     return render(request, 'learn.html')

@@ -19,7 +19,7 @@
     <!-- Website Title -->
     <title>EML - Easy Machine Learning</title>
     <!-- Website Icon  -->
-    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700">
@@ -37,7 +37,7 @@
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="{% url 'index' %}">
-            <img src="{% static 'images/logo_a.svg' %}" alt="alternative">
+            <img src="{% static 'images/logo_l.svg' %}" alt="alternative">
         </a>
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">EML</a> -->
@@ -124,12 +124,36 @@
                                 <table>
                                     <tr>
                                         <th>Column Name</th>
-                                        <th>Id</th>
-                                        <th>SepalLengthCm</th>
-                                        <th>SepalWidthCm</th>
-                                        <th>PetalLengthCm</th>
-                                        <th>PetalWidthCm</th>
-                                        <th>Species</th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox"> Id
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox"> SepalLengthCm
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox"> SepalWidthCm
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox"> PetalLengthCm
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox">PetalWidthCm
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-group checkbox">
+                                                <input type="checkbox">Species
+                                            </div>
+                                        </th>
                                     </tr>
                                     <tr>
                                         <td>Column Example</td>
@@ -163,11 +187,31 @@
                                     <table>
                                         <tr>
                                             <th>Column Name</th>
-                                            <th>Id</th>
-                                            <th>SepalLengthCm</th>
-                                            <th>SepalWidthCm</th>
-                                            <th>PetalLengthCm</th>
-                                            <th>PetalWidthCm</th>
+                                            <th>
+                                                <div class="form-group checkbox">
+                                                    <input type="checkbox"> Id
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="form-group checkbox">
+                                                    <input type="checkbox"> SepalLengthCm
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="form-group checkbox">
+                                                    <input type="checkbox"> SepalWidthCm
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="form-group checkbox">
+                                                    <input type="checkbox"> PetalLengthCm
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="form-group checkbox">
+                                                    <input type="checkbox">PetalWidthCm
+                                                </div>
+                                            </th>
                                         </tr>
                                         <tr>
                                             <td>Column Example</td>
@@ -190,135 +234,263 @@
                             next
 
                         </p>
-
-                        <form id="contactForm" data-toggle="validator" data-focus="false">
-                            <div class="form-container">
-                                <div class="form-group">
-                                    <table>
-                                        <tr>
-                                            <th>Column Name</th>
-                                            <th>Id</th>
-                                            <th>SepalLengthCm</th>
-                                            <th>SepalWidthCm</th>
-                                            <th>PetalLengthCm</th>
-                                            <th>PetalWidthCm</th>
-                                            <th>Species</th>
-                                        </tr>
-                                        <tr>
-                                            <td>How do you mark it? <br /> <small>Nan, --, 0, Blank etc.</small>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control-input">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>What do you want to do with missing data?</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select class="form-control-select">
-                                                        <option class="select-option"> Ignore row/col with missing
-                                                            information</option>
-                                                        <option class="select-option">Treat it as an average
-                                                        </option>
-                                                        <option class="select-option">Treat it as an median</option>
-                                                    </select>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="col-md-6">
-                                    <a class="full-button">LEARN</a>
-                                </div>
+                        <div class="form-container">
+                            <div class="form-group">
+                                <table>
+                                    <tr>
+                                        <th>Column Name</th>
+                                        <th>Id</th>
+                                        <th>SepalLengthCm</th>
+                                        <th>SepalWidthCm</th>
+                                        <th>PetalLengthCm</th>
+                                        <th>PetalWidthCm</th>
+                                        <th>Species</th>
+                                    </tr>
+                                    <tr>
+                                        <td>How do you mark it? <br /> <small>Nan, --, 0, Blank etc.</small>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>What do you want to do with missing data?</td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <select class="form-control-select">
+                                                    <option class="select-option"> Ignore row/col with missing
+                                                        information</option>
+                                                    <option class="select-option">Treat it as an average
+                                                    </option>
+                                                    <option class="select-option">Treat it as an median</option>
+                                                </select>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
+                            <div class="col-md-6">
+                                <a class="full-button" onclick="stage4()">LEARN</a>
+                            </div>
+                        </div>
+                    </div> <!-- end of text-container -->
+
+                    <div id="learn" class="text-container" hidden>
+                        <h6> We trianed a great model for you - it has <strong> 96.63% </strong> accuracy </h6>
+                        <br />
+                        <table>
+                            <tr>
+                                <th>Column Name</th>
+                                <th>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox"> Id
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox"> SepalLengthCm
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox"> SepalWidthCm
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox"> PetalLengthCm
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox">PetalWidthCm
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>Column Example</td>
+                                <td>1</td>
+                                <td>5.1</td>
+                                <td>3.5</td>
+                                <td>1.4</td>
+                                <td>0.2</td>
+                            </tr>
+                        </table>
+                        <br />
+                        <div class="form-container">
+                            <div class="form-group">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 offset-lg-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input" required>
+                                                <label class="label-control">start</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input" required>
+                                                <label class="label-control">end</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control-input" required>
+                                                <label class="label-control">steps</label>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn-outline-sm" onclick="result()">Result</button>
+                                            </div>
+                                            <br />
+                                            <div class="row" id="re" hidden>
+                                                <table>
+                                                    <tr>
+                                                        <th> Id </th>
+                                                        <th> SepalLengthCm </th>
+                                                        <th> SepalWidthCm</th>
+                                                        <th> PetalLengthCm</th>
+                                                        <th>PetalWidthCm</th>
+                                                        <th>Species</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.0</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.1</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.2</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.3</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.4</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5.1</td>
+                                                        <td>3.5</td>
+                                                        <td>0.5</td>
+                                                        <td>0.2</td>
+                                                        <td>Iris-setosa</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div> <!-- end of col -->
+                                    </div> <!-- end of row -->
+                                </div> <!-- end of container -->
+                            </div>
+                        </div>
                     </div> <!-- end of text-container -->
 
                 </div> <!-- end of col-->

@@ -23,7 +23,7 @@
     <!-- Website Title -->
     <title>EML - Easy Machine Learning</title>
     <!-- Website Icon  -->
-    <link rel="icon" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700">
@@ -41,7 +41,7 @@
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="{% url 'index' %}">
-            <img src="{% static 'images/logo_a.svg' %}" alt="alternative">
+            <img src="{% static 'images/logo_l.svg' %}" alt="alternative">
         </a>
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">EML</a> -->
@@ -534,8 +534,8 @@
             <div class="row">
                 <div class="col-lg-14">
                     <h2>Let's Go!</h2>
-                    <div class="p-heading p-large">...</div>
-                    <a class="btn-solid-reg" href="learn.html">Start Learning</a>
+                    <p>Try now for your own data </p>
+                    <a class="btn-solid-reg" href="{% url 'learn' %}">Start Learning</a>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
